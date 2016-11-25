@@ -13,25 +13,30 @@ public class Vehicule {
 
 	public void demarrer() {
 		started = true;
+		System.out.println("Démarrage");
 	}
 
 	public void arreter() {
 		if (vitesse == 0) {
 			started = false;
+			System.out.println("Arrêt");
 		}
 	}
 
 	public void accelerer() {
 		if (started) {
 			vitesse += 5.0;
+			System.out.println("Accélaration +5 km/h");
 		}
 	}
 
 	public void freiner() {
 		if (vitesse >= 5.0) {
 			vitesse -= 5.0;
+			System.out.println("Décelération -5 km/h");
 		} else {
 			vitesse = 0.0;
+			System.out.println("Arrêt");
 		}
 	}
 
