@@ -13,7 +13,7 @@ public class Palindrome {
 	public static void main(String[] args) {
 		if (args.length > 0) {
 			String mot = args[0];
-			System.out.println(mot + " ? " + estPalindrome(mot));
+			System.out.println("'" + mot + "' est un palindrome ? " + estPalindrome(mot));
 		}
 	}
 }
