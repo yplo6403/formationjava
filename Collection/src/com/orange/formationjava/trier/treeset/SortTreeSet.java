@@ -2,6 +2,8 @@ package com.orange.formationjava.trier.treeset;
 
 import java.util.TreeSet;
 
+import com.orange.formationjava.trier.Person;
+
 public class SortTreeSet<E> {
 
 	private void display(TreeSet<E> myTreeSet) {
@@ -13,12 +15,12 @@ public class SortTreeSet<E> {
 	public static void main(String[] args) {
 		SortTreeSet<Person> test = new SortTreeSet<>();
 		TreeSet<Person> myTreeSet = new TreeSet<>();
-		myTreeSet.add(new Person("Bruno","FROGER"));
-		myTreeSet.add(new Person("Patrice","WACRENIER"));
-		myTreeSet.add(new Person("Christophe","BETOULE"));
-		myTreeSet.add(new Person("Oliver","RESNAIS"));
-		myTreeSet.add(new Person("Jerome","CRESTEL"));
-		myTreeSet.add(new Person("Thierry","MARCOT"));
+		myTreeSet.add(new Person("Bruno", "FROGER", 1));
+		myTreeSet.add(new Person("Patrice", "WACRENIER", 2));
+		myTreeSet.add(new Person("Christophe", "BETOULE", 3));
+		myTreeSet.add(new Person("Oliver", "RESNAIS", 4));
+		myTreeSet.add(new Person("Jerome", "CRESTEL", 5));
+		myTreeSet.add(new Person("Thierry", "MARCOT", 6));
 		test.display(myTreeSet);
 		// Exécuter et corriger
 	}
