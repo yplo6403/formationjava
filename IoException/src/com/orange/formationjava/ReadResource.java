@@ -17,17 +17,33 @@ public class ReadResource {
 	public boolean openAndDisplayFile(String filename) {
 		System.out.println("--- File start ---");
 
-		ClassLoader classLoader = getClass().getClassLoader();
-		FileInputStream fstream = new FileInputStream(classLoader.getResource(filename).getFile());
-		BufferedReader reader = new BufferedReader(new InputStreamReader(fstream));
-		String line;
-		while ((line = reader.readLine()) != null) {
-			System.out.println(line);
-		}
-		reader.close();
+		BufferedReader reader = null;
+		try {
+			ClassLoader classLoader = getClass().getClassLoader();
+			FileInputStream fstream = new FileInputStream(classLoader.getResource(filename).getFile());
+			reader = new BufferedReader(new InputStreamReader(fstream));
+			String line;
 
-		System.out.println("--- File End ---");
-		return true;
+			while ((line = reader.readLine()) != null) {
+				System.out.println(line);
+			}
+			System.out.println("--- File End ---");
+			return true;
+
+		} catch (NullPointerException | IOException e) {
+			e.printStackTrace();
+			return false;
+
+		} finally {
+			if (reader != null) {
+				try {
+					reader.close();
+
+				} catch (IOException e) {
+					// ignore
+				}
+			}
+		}
 	}
 
 }
