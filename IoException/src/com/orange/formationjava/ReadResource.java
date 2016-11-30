@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URL;
 
 public class ReadResource {
 
@@ -20,7 +21,9 @@ public class ReadResource {
 		BufferedReader reader = null;
 		try {
 			ClassLoader classLoader = getClass().getClassLoader();
-			FileInputStream fstream = new FileInputStream(classLoader.getResource(filename).getFile());
+			URL url = classLoader.getResource(filename);
+			String filenameFromUrl = url.getFile();
+			FileInputStream fstream = new FileInputStream(filenameFromUrl);
 			reader = new BufferedReader(new InputStreamReader(fstream));
 			String line;
 
@@ -30,7 +33,7 @@ public class ReadResource {
 			System.out.println("--- File End ---");
 			return true;
 
-		} catch (NullPointerException | IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 			return false;
 
