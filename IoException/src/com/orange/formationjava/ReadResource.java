@@ -3,6 +3,7 @@ package com.orange.formationjava;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 
 public class ReadResource {
 
@@ -17,7 +18,10 @@ public class ReadResource {
 		System.out.println("--- File start ---");
 
 		ClassLoader classLoader = getClass().getClassLoader();
-		FileInputStream fstream = new FileInputStream(classLoader.getResource(filename).getFile());
+		// Care: getResource returns null if resource cannot be found!
+		URL url = classLoader.getResource(filename);
+		String filenameFromUrl = url.getFile();
+		FileInputStream fstream = new FileInputStream(filenameFromUrl);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(fstream));
 		String line;
 		while ((line = reader.readLine()) != null) {
