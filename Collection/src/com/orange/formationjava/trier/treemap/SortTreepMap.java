@@ -30,7 +30,7 @@ public class SortTreepMap<K, V> {
 		TreeMap<Integer,Person> newTreeMap = new TreeMap<Integer, Person>(new MyComparator(myTreeMap));
 		
 		// La nouvelle TreeMap est vide! Recopier les valeurs de myTreeMap dans newTreeMap
-		
+		newTreeMap.putAll(myTreeMap);
 		test.display(newTreeMap);
 	}
 

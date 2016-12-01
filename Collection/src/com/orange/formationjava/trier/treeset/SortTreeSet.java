@@ -22,7 +22,6 @@ public class SortTreeSet<E> {
 		myTreeSet.add(new Person("Jerome", "CRESTEL", 5));
 		myTreeSet.add(new Person("Thierry", "MARCOT", 6));
 		test.display(myTreeSet);
-		// Exécuter et corriger
 	}
 
 }

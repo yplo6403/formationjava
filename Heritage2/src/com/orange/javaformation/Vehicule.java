@@ -1,58 +1,58 @@
 package com.orange.javaformation;
 
 public class Vehicule {
-	private final String marque;
-	private final String couleur;
-	private double vitesse;
-	private boolean started;
+	private final String mMarque;
+	private final String mCouleur;
+	private double mVitesse;
+	private boolean mStarted;
 
 	public Vehicule(String marque, String couleur) {
-		this.marque = marque;
-		this.couleur = couleur;
+		mMarque = marque;
+		mCouleur = couleur;
 	}
 
 	public void demarrer() {
-		started = true;
+		mStarted = true;
 		System.out.println("Démarrage");
 	}
 
 	public void arreter() {
-		if (vitesse == 0) {
-			started = false;
+		if (mVitesse == 0) {
+			mStarted = false;
 			System.out.println("Arrêt");
 		}
 	}
 
 	public void accelerer() {
-		if (started) {
-			vitesse += 5.0;
+		if (mStarted) {
+			mVitesse += 5.0;
 			System.out.println("Accélaration +5 km/h");
 		}
 	}
 
 	public void freiner() {
-		if (vitesse >= 5.0) {
-			vitesse -= 5.0;
+		if (mVitesse >= 5.0) {
+			mVitesse -= 5.0;
 			System.out.println("Décelération -5 km/h");
 		} else {
-			vitesse = 0.0;
+			mVitesse = 0.0;
 			System.out.println("Arrêt");
 		}
 	}
 
 	public String getMarque() {
-		return marque;
+		return mMarque;
 	}
 
 	public String getCouleur() {
-		return couleur;
+		return mCouleur;
 	}
 
 	public double getVitesse() {
-		return vitesse;
+		return mVitesse;
 	}
 
 	public boolean isStarted() {
-		return started;
+		return mStarted;
 	}
 }

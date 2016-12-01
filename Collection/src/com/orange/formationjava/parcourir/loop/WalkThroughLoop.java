@@ -8,10 +8,13 @@ public class WalkThroughLoop<E> {
 
 	public void display(List<E> list) {
 		// Compléter : utiliser le mot clef 'foreach'
+		for (E element : list) {
+			System.out.println("Element=" + element);
+		}
 	}
 
 	public static void main(String[] args) {
-		String[] tab = new String[] {"toto", "titi"};
+		String[] tab = new String[] { "toto", "titi" };
 		WalkThroughLoop<String> test = new WalkThroughLoop<>();
 		List<String> myList = new ArrayList<String>(Arrays.asList(tab));
 		myList.add(null);

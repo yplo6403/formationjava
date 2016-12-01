@@ -24,8 +24,17 @@ public class CustomSortList<E> {
 		myList.add(new Person("Oliver", "RESNAIS", 2));
 		myList.add(new Person("Jerome", "CRESTEL", 6));
 		myList.add(new Person("Thierry", "MARCOT", 5));
+		test.display(myList);
+		System.out.println("____________________");
 		// Afficher une liste triée par age
+		Collections.sort(myList, new Comparator<Person>()  {
 
+			@Override
+			public int compare(Person o1, Person o2) {
+				return o1.getAge() - o2.getAge();
+			}
+			
+		});
 		test.display(myList);
 	}
 }

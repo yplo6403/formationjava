@@ -18,8 +18,11 @@ public class SortList<E> {
 		myList.add("Un");
 		myList.add("Deux");
 		myList.add("Trois");
-		myList.add(null);
 		test.display(myList);
+		System.out.println("___________________");
 		// Afficher une liste triée
+		Collections.sort(myList);
+		test.display(myList);
+		
 	}
 }

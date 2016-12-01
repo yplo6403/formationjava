@@ -1,10 +1,10 @@
 package com.orange.formationjava.trier;
 
-public class Person {
+public class Person implements Comparable<Person> {
 
 	private final String mFirstName;
 	private final String mLastName;
-	private int mAge;
+	private Integer mAge;
 
 	public Person(String firstName, String lastName, int age) {
 		mFirstName = firstName;
@@ -20,7 +20,7 @@ public class Person {
 		return mFirstName;
 	}
 
-	public int getAge() {
+	public Integer getAge() {
 		return mAge;
 	}
 
@@ -32,5 +32,17 @@ public class Person {
 	public String toString() {
 		return "Person [prénom='" + mFirstName + "', nom='" + mLastName + ", age=" + mAge + "]";
 	}
+
+	@Override
+	public int compareTo(Person other) {
+		// Comparaison sur le nom
+		int compareNom = mLastName.compareTo(other.mLastName);
+		if (compareNom == 0)  {
+			// Si égalité sur le nom: comparaison sur le prénom
+			return mFirstName.compareTo(other.mFirstName);
+		}
+		return compareNom;
+	}
+
 
 }

@@ -2,7 +2,7 @@ package com.orange.javaformation;
 
 public class Ambulance extends Voiture {
 
-	private boolean gyrophareStarted;
+	private boolean mGyrophareStarted;
 
 	public Ambulance(String marque, String modele, String couleur, int nbPortes) {
 		super(marque, modele, couleur, nbPortes);
@@ -11,12 +11,12 @@ public class Ambulance extends Voiture {
 	@Override
 	public void demarrer() {
 		super.demarrer();
-		gyrophareStarted = true;
+		mGyrophareStarted = true;
 		System.out.println("Démarrage avec gyrophare");
 	}
 
 	public void demarrer(boolean gyrophareStarted) {
-		this.gyrophareStarted = gyrophareStarted;
+		mGyrophareStarted = gyrophareStarted;
 		super.demarrer();
 		if (gyrophareStarted) {
 			System.out.println("Démarrage avec gyrophare");
@@ -26,11 +26,11 @@ public class Ambulance extends Voiture {
 	@Override
 	public void arreter() {
 		super.arreter();
-		gyrophareStarted = false;
+		mGyrophareStarted = false;
 	}
 
 	public boolean isGyrophareStarted() {
-		return gyrophareStarted;
+		return mGyrophareStarted;
 	}
 
 	public static void main(String[] args) {
