@@ -1,5 +1,9 @@
 package com.orange.formationjava.generic;
 
+/**
+ * Classic version of Duo class
+ *
+ */
 public class Duo {
 
 	private Object mFirst;
