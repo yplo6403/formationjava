@@ -1,20 +1,36 @@
 package com.orange.formationjava.generic;
 
-public class Duo {
+/**
+ * Generic version of the Duo class.
+ * 
+ * @param <T>
+ *            the type of the first item
+ * @param <U>
+ *            the type of the second item
+ */
+public class Duo<T, U> {
 
-	private Object mFirst;
-	private Object mSecond;
-	
-	public Duo(Object first, Object second) {
+	private T mFirst;
+	private U mSecond;
+
+	/**
+	 * The constructor
+	 * 
+	 * @param first
+	 *            the first item of the Duo instance
+	 * @param second
+	 *            the second item of the Duo instance
+	 */
+	public Duo(T first, U second) {
 		mFirst = first;
 		mSecond = second;
 	}
-		
-	public Object getFirst() {
+
+	public T getFirst() {
 		return mFirst;
 	}
-	
-	public Object getSecond() {
+
+	public U getSecond() {
 		return mSecond;
 	}
 
