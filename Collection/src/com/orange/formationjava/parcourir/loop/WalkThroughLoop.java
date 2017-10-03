@@ -1,5 +1,6 @@
 package com.orange.formationjava.parcourir.loop;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,8 +11,9 @@ public class WalkThroughLoop<E> {
 	}
 
 	public static void main(String[] args) {
+		String[] tab = new String[] {"toto", "titi"};
 		WalkThroughLoop<String> test = new WalkThroughLoop<>();
-		List<String> myList = Arrays.asList(args);
+		List<String> myList = new ArrayList<String>(Arrays.asList(tab));
 		myList.add(null);
 		test.display(myList);
 	}
