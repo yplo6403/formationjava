@@ -8,11 +8,9 @@ import java.util.TreeMap;
 
 import com.orange.formationjava.trier.Person;
 
-public class SortTreepMap<K, V> {
+public class SortTreepMap {
 
 	public static void main(String[] args) {
-
-		SortTreepMap<Integer, Person> test = new SortTreepMap<>();
 		// Par défaut la tree map est ordonnée selon l'ordre naturel des clefs.
 		TreeMap<Integer, Person> myTreeMap = new TreeMap<>();
 		myTreeMap.put(new Integer(1), new Person("Bruno", "FROGER", 3));
@@ -22,7 +20,7 @@ public class SortTreepMap<K, V> {
 		myTreeMap.put(new Integer(5), new Person("Jerome", "CRESTEL", 6));
 		myTreeMap.put(new Integer(6), new Person("Thierry", "MARCOT", 4));
 		// dans ce cas de figure, notre Map est triée par indice croissant
-		test.display(myTreeMap);
+		display(myTreeMap);
 		
 		System.out.println("------------------------------------------------------");
 		
@@ -31,14 +29,14 @@ public class SortTreepMap<K, V> {
 		
 		// La nouvelle TreeMap est vide! Recopier les valeurs de myTreeMap dans newTreeMap
 		
-		test.display(newTreeMap);
+		display(newTreeMap);
 	}
 
-	private void display(TreeMap<K, V> treeMap) {
-		Set<Map.Entry<K, V>> entries = treeMap.entrySet();
-		Iterator<Entry<K, V>> iterator = entries.iterator();
+	private static void display(TreeMap<Integer, Person> treeMap) {
+		Set<Map.Entry<Integer, Person>> entries = treeMap.entrySet();
+		Iterator<Entry<Integer, Person>> iterator = entries.iterator();
 		while (iterator.hasNext()) {
-			Map.Entry<K, V> entry = (Entry<K, V>) iterator.next();
+			Map.Entry<Integer, Person> entry = iterator.next();
 			System.out.println("clé : " + entry.getKey() + " - valeur : " + entry.getValue());
 		}
 	}

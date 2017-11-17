@@ -1,22 +1,20 @@
 package com.orange.formationjava.trier.list;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 import com.orange.formationjava.trier.Person;
 
-public class CustomSortList<E> {
+public class CustomSortList {
 
-	public void display(List<E> list) {
-		for (E e : list) {
-			System.out.println("element=" + e);
+	public static void display(List<Person> list) {
+		for (Person element : list) {
+			System.out.println("element=" + element);
 		}
 	}
 
 	public static void main(String[] args) {
-		CustomSortList<Person> test = new CustomSortList<>();
 		List<Person> myList = new ArrayList<>();
 		myList.add(new Person("Bruno", "FROGER", 3));
 		myList.add(new Person("Patrice", "WACRENIER", 4));
@@ -24,8 +22,11 @@ public class CustomSortList<E> {
 		myList.add(new Person("Oliver", "RESNAIS", 2));
 		myList.add(new Person("Jerome", "CRESTEL", 6));
 		myList.add(new Person("Thierry", "MARCOT", 5));
-		// Afficher une liste triée par age
-
-		test.display(myList);
+		display(myList);
+		System.out.println("----------------------------------");
+		// Créer/Implémenter le comparator pour trier la liste par age
+		Comparator<Person> comparator;
+		myList.sort(comparator);
+		display(myList);
 	}
 }
